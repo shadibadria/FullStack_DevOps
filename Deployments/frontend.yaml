@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  frontend_server:
+    image: ${IMAGE}
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true #view changes on container
+    tty: true #view changes on container
