@@ -3,7 +3,10 @@
 */
 def unit_testing(){
   echo 'Running Unit Testing...'
-  sh "npm test";
+  sh 'docker build -t your_custom_docker_image backend/'
+  sh '''
+    docker run --rm -v $(pwd):/app -w /app your_custom_docker_image npm test
+  '''
 }
 //increment backend version
 def increment_backend_version() {
