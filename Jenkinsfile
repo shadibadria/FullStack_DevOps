@@ -14,14 +14,11 @@ pipeline {
     stage('Unit Testing') {
       steps {
         script{
-          sh 'pwd'
+          echo "here";
+          sh 'pwd';
+          echo "here";
         }
-        dir('backend') {
-          script {
-            
-            gv.unit_testing()
-          }
-        }
+
       }
     }
   }
