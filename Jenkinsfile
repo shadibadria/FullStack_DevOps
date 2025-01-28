@@ -3,6 +3,7 @@
 def gv
 
 pipeline {
+  
     agent {
         any {
             image 'alpine' // You can also use 'ubuntu' or any other Linux-based image
@@ -16,14 +17,15 @@ pipeline {
         }
       }
     }
-    stage('Unit Testing') {
-      steps {
-        dir('backend') {
-          script {
-            gv.unit_testing()  // Calls function from script.groovy
-          }
+        stage('Unit Testing') {
+            steps {
+                dir('backend') {
+                    script {
+                        sh 'npm install'  // Install dependencies
+                        sh 'npm test'     // Run tests
+                    }
+                }
+            }
         }
-      }
-    }
   }
 }
