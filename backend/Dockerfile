@@ -2,14 +2,10 @@ FROM node:16-alpine
 
 WORKDIR /app
 
-COPY   package.json .
+COPY package.json . 
 
 RUN npm install 
 
-COPY . .
+COPY . . 
 
-EXPOSE  80
-
-CMD ["npm","start"]
-
-
+CMD ["npm", "test"]

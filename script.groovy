@@ -3,7 +3,9 @@
 */
 def unit_testing(){
   echo "Running Unit Testing..";
-  sh "docker run .";
+  sh "docker build -t my-test-image .";
+  sh "docker run --rm my-test-image";
+
 }
 //increment backend version
 def increment_backend_version() {
