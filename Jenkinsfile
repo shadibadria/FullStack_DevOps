@@ -21,7 +21,7 @@ pipeline {
             steps {
                 dir('backend') {
                     script {
-                        sh 'npm test'     // Run tests
+                      gv.unit_testing()
                     }
                 }
             }

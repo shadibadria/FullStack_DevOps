@@ -3,7 +3,9 @@
 */
 def unit_testing() {
   echo "Running Unit Testing..."
-  sh 'npm test'
+  sh "npm test"
+  sh "docker build -t unit_test ."
+  sh "docker run unit_test"
 }
 
 
