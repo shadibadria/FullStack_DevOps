@@ -2,7 +2,11 @@
 
 def gv
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'alpine' // You can also use 'ubuntu', 'node', or any Linux-based image
+    }
+  }
   stages {
     stage('init') {
       steps {
@@ -13,12 +17,11 @@ pipeline {
     }
     stage('Unit Testing') {
       steps {
-        script{
-          echo "here";
-          sh 'pwd';
-          echo "here";
+        script {
+          echo "here"
+          sh 'pwd'
+          echo "here"
         }
-
       }
     }
   }
