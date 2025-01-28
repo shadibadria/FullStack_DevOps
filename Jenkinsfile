@@ -13,10 +13,10 @@ pipeline {
     }
     stage('Unit Testing') {
       steps {
-        script {
-          echo "here"
-          sh 'pwd'
-          echo "here"
+        dir('backend') {
+          script {
+            gv.unit_testing()
+          }
         }
       }
     }
