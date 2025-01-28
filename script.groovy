@@ -1,12 +1,13 @@
 /*
   Configuration for Pipeline
 */
-def unit_testing(){
-  echo "Running Unit Testing..";
-  sh "docker build -t my-test-image .";
-  sh "docker run --rm my-test-image";
-
+def unit_testing() {
+  echo "Running Unit Testing..."
+  sh "docker build -t my-test-image ."
+  sh "docker run --rm my-test-image"
 }
+
+
 //increment backend version
 def increment_backend_version() {
     echo 'incrementing backend app version...'

@@ -1,17 +1,16 @@
 #!/usr/bin/env groovy
 
 def gv
+
 pipeline {
   agent {
-    docker {
-      image 'node:16'  // Use Node.js image with npm installed
-    }
+    docker 'node:16'  // Correct docker agent syntax
   }
   stages {
-    stage('init') {
+    stage('Init') {
       steps {
         script {
-          gv = load "script.groovy"
+          gv = load "script.groovy"  // Ensure script.groovy exists
         }
       }
     }
@@ -19,7 +18,7 @@ pipeline {
       steps {
         dir('backend') {
           script {
-            gv.unit_testing()
+            gv.unit_testing()  // Calls function from script.groovy
           }
         }
       }
