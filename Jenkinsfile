@@ -4,7 +4,7 @@ def gv
 
 pipeline {
     agent {
-        docker {
+        any {
             image 'alpine' // You can also use 'ubuntu' or any other Linux-based image
         }
     }
