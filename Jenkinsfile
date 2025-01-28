@@ -2,7 +2,11 @@
 
 def gv
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:16'  // Use Node.js image with npm installed
+    }
+  }
   stages {
     stage('init') {
       steps {
