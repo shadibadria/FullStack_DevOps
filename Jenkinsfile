@@ -3,9 +3,11 @@
 def gv
 
 pipeline {
-  agent {
-    docker 'node:16'  // Correct docker agent syntax
-  }
+    agent {
+        docker {
+            image 'alpine' // You can also use 'ubuntu' or any other Linux-based image
+        }
+    }
   stages {
     stage('Init') {
       steps {
