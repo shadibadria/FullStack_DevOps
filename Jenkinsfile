@@ -21,7 +21,6 @@ pipeline {
             steps {
                 dir('backend') {
                     script {
-                        sh 'npm install'  // Install dependencies
                         sh 'npm test'     // Run tests
                     }
                 }

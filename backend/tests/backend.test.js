@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 app.get('/test', (req, res) => {
-  res.status(0).json({ message: 'Test passed' });
+  res.status(200).json({ message: 'Test passed' });
 });
 
 describe('Always passing tests', () => {
